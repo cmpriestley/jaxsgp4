@@ -21,3 +21,4 @@ htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
+workbook.ipynb

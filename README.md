@@ -94,14 +94,6 @@ See the [examples guide](docs/examples.md) for detailed usage, including:
 
 ## Performance
 
-| Method | Time |
-|--------|------|
-| JAX SGP4 (single, unjitted) | ~69 ms |
-| JAX SGP4 (single, jitted) | ~9 μs |
-| JAX SGP4 (10,000 times, vmapped+jitted) | ~2.2 ms |
-| Reference C++ SGP4 (single) | ~231 ns |
-| Reference C++ SGP4 (10,000 times) | ~1.4 ms |
-
 JAX SGP4 becomes competitive with — and can significantly outperform — C++ implementations when propagating many satellites or time steps in parallel, especially on GPU hardware.
 
 ## Limitations
@@ -123,5 +115,12 @@ MIT
 
 ## References
 
-- Hoots, F. R., & Roehrich, R. L. (1980). *Spacetrack Report No. 3: Models for Propagation of NORAD Element Sets*
-- Vallado, D. A., Crawford, P., Hujsak, R., & Kelso, T. S. (2006). *Revisiting Spacetrack Report #3*
+This implementation was written directly from the equations laid out in:
+
+- Hoots, F. R., Schumacher Jr., P. W., & Glover, R. A. (2004). *History of Analytical Orbit Modeling in the U.S. Space Surveillance System.* Journal of Guidance, Control, and Dynamics, 27(2), 174–185. [doi:10.2514/1.9161](https://doi.org/10.2514/1.9161)
+
+originally taken from:
+
+- Hoots, F. R., & Roehrich, R. L. (1980). *Spacetrack Report No. 3: Models for Propagation of NORAD Element Sets.* Aerospace Defense Command, United States Air Force. [(PDF)](https://celestrak.org/NORAD/documentation/spacetrk.pdf)
+
+with reference to the [sgp4 Python library](https://github.com/brandon-rhodes/python-sgp4) by Brandon Rhodes for implementation specifics.
