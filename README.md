@@ -4,6 +4,8 @@
 
 A pure JAX implementation of the SGP4 (Simplified General Perturbations 4) satellite orbit propagation algorithm.
 
+![Starlink satellite trajectories](docs/starlink_trajectories_two_tone.png)
+
 ## Overview
 
 `jax_sgp4` provides a differentiable and JIT-compilable SGP4 propagator built entirely in JAX. The SGP4 algorithm is the standard method for propagating Two-Line Element (TLE) sets to predict satellite positions and velocities.
