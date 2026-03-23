@@ -12,4 +12,4 @@ class Satellite(NamedTuple):
     Bstar: float   # Drag coefficient
     epochdays: float      # Epoch in days of year FIX this description later
     epochyr: float      # Epoch year FIX this description later
-                        # I think standard sgp4 gives epochyr as a two digit year but this is four digit?
+                        # (Note: standard sgp4 library gives epochyr as a two digit year but we use a four digit year here)

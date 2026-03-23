@@ -17,7 +17,6 @@ J4 = -1.65597e-6
 GM = 3.986008e5 # Earth gravitational parameter km^3/s^2
 aE = 6378.135   # Earth equatorial radius in km 
 ke = 60.0 / np.sqrt(aE**3 / GM)  # sqrt(GM) in units (Earth Radii)^1.5 / min)
-# (use np for constants calculated at import time to avoid jax issues at import)
 
 # Derived constants (note: in normalised units as implied by paper i.e. aE = 1) 
 k2 = 0.5 * J2 # (Earth Radii)^2 
@@ -40,6 +39,7 @@ def sgp4(sat: Satellite, tsince):
       r       : Position vector [x, y, z] in km
       v       : Velocity vector [vx, vy, vz] in km/s
       (changed this to output concatenated array of r and v to make timing easier)
+      
       error_code : non-zero on error
       1       : mean eccentricity out of range
       2       : mean motion less than 0.0
@@ -333,7 +333,7 @@ def sgp4(sat: Satellite, tsince):
     esinE = axN * jnp.sin(Ew) - ayN * jnp.cos(Ew)
     
     e_osc = jnp.sqrt(ecosE ** 2 + esinE ** 2) 
-    e_osc = jnp.clip(e_osc, 1e-6, 1.0 - 1e-6) # Safety clip 
+    # e_osc = jnp.clip(e_osc, 1e-6, 1.0 - 1e-6) # Safety clip 
     
     pL = a_final_sec * (1 - e_osc ** 2)
 
@@ -410,7 +410,5 @@ def sgp4(sat: Satellite, tsince):
     # Error if radius below Earth's surface (unphysical)
     error_code = jnp.where(rk < 1.0, 6, error_code)
 
-    # mask errors with NaN?
-
-    # may need to comment out error code here to make timing work 
+    # may need to remove error code from output to make timing work 
     return jnp.concatenate((r_vec, v_vec)), error_code
