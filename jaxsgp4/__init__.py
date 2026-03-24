@@ -1,6 +1,6 @@
 # JAXSGP4 - A JAX implementation of the SGP4 satellite orbit propagation algorithm
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .model import Satellite
 from .propagation import sgp4

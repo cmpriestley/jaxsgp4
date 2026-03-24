@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "jaxsgp4"
-version = "0.1.0"
+version = "0.2.0"
 description = "A pure JAX implementation of the SGP4 satellite orbit propagation algorithm"
 readme = "README.md"
 requires-python = ">=3.9"
