@@ -101,7 +101,6 @@ See the [examples guide](docs/examples.md) for detailed usage, including:
 ## Limitations
 
 - **Near-Earth orbits only** — orbital period must be < 225 minutes (deep-space perturbations not yet implemented)
-- **No resonance effects** — geosynchronous/Molniya resonance terms are placeholders
 - **WGS-72 constants only** — matches the standard SGP4 specification
 
 ## Running Tests
