@@ -1,6 +1,7 @@
 # jaxsgp4
 
 [![CI](https://github.com/cmpriestley/jaxsgp4/actions/workflows/ci.yml/badge.svg)](https://github.com/cmpriestley/jaxsgp4/actions/workflows/ci.yml)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.27830-b31b1b)](https://arxiv.org/abs/2603.27830)
 
 A pure JAX implementation of the SGP4 (Simplified General Perturbations 4) satellite orbit propagation algorithm.
 
