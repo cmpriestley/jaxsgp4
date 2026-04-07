@@ -8,7 +8,7 @@ A pure JAX implementation of the SGP4 (Simplified General Perturbations 4) satel
 
 ## Overview
 
-`jaxsgp4` provides a differentiable and JIT-compilable SGP4 propagator built entirely in JAX. The SGP4 algorithm is the standard method for propagating Two-Line Element (TLE) sets to predict satellite positions and velocities.
+`jaxsgp4` provides a differentiable and JIT-compilable SGP4 propagator built entirely in JAX. The SGP4 algorithm is the standard method for propagating Two-Line Element (TLE) sets to predict satellite positions and velocities. For full details, see the accompanying paper: [*jaxsgp4: GPU-accelerated mega-constellation propagation with batch parallelism*](https://arxiv.org/abs/2603.27830).
 
 Because the implementation uses only JAX primitives, it is fully compatible with JAX's transformation system:
 
